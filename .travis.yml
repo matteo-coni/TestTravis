@@ -1,4 +1,12 @@
 language: java
 jdk:
-  - openjdk8
-script: ant build
+  - openjdk15
+
+addons:
+  sonarcloud:
+    organization: matteo-coni
+    token: c491cf674659af5cd9e1a46356d74e6bb49d80ac
+
+script: 
+  - ant build
+  - sonar-scanner
